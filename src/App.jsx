@@ -187,7 +187,7 @@ export default function App() {
                         <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">{p.category} · {p.year}</span>
                         <ExternalLink size={13} className="text-zinc-600 group-hover:text-white transition-colors" />
                       </div>
-                      <h3 className="text-lg font-medium text-white mb-2 group-hover:text-zinc-200 transition-colors">{p.title}</h3>
+                     <h3 className="text-lg font-medium text-white mb-2 group-hover:text-teal-400 transition-colors">{p.title}</h3>
                       <p className="text-zinc-500 text-xs leading-relaxed line-clamp-2">{p.desc}</p>
                       <div className="flex flex-wrap gap-1.5 mt-4">
                         {p.tags.map((t, i) => (
