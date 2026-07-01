@@ -3,6 +3,7 @@
 A personal portfolio site showcasing SQL databases, BI dashboards, Java desktop applications, and digital logic design projects — built independently while learning full-stack development from scratch.
 
 **Live site:** [m2ammar.github.io/ammar-s_portfolio](https://m2ammar.github.io/ammar-s_portfolio/)
+
 ![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)
 ![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC?logo=tailwindcss&logoColor=white)
