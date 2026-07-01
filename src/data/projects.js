@@ -91,29 +91,19 @@ export const projects = [
 
 
   // ---------- NEW ----------
-  caseStudy: {
+    caseStudy: {
     abstract:
       'A hardware implementation of a three-floor elevator controller built as part of a Digital Logic Design course. The project combines combinational and sequential logic to simulate real elevator behavior using Boolean equations, D flip-flops, and a seven-segment display.',
-
-    overview:
-      'Developed collaboratively by a three-member team to apply Digital Logic Design concepts to a real-world embedded system. Rather than only completing theoretical exercises, the objective was to design, simulate, build, and debug a complete elevator controller from scratch.',
-
-    objective: [
-      'Apply Digital Logic Design concepts in a practical hardware project.',
-      'Combine combinational and sequential circuits into one complete system.',
-      'Design a controller capable of moving between three floors.',
-      'Implement and verify the circuit using both simulation and physical hardware.'
-    ],
-
-    systemDesign: [
+    objective:
+      'Apply Digital Logic Design concepts in a practical hardware project. Combine combinational and sequential circuits into one complete system. Design a controller capable of moving between three floors. Implement and verify the circuit using both simulation and physical hardware.',
+    howItWorks: [
       'Current floor represented using 2-bit state encoding (Q1Q0).',
       'Floor requests implemented using one-hot encoding (F1, F2, F3).',
       'Boolean equations generated from a complete truth table.',
       'D Flip-Flops used for state storage.',
       '7447 decoder connected to a seven-segment display for floor indication.'
     ],
-
-    skills: [
+    technologies: [
       'Boolean Algebra',
       'Karnaugh Maps',
       'Combinational Logic',
@@ -124,7 +114,9 @@ export const projects = [
       'Hardware Debugging',
       'TinkerCad Simulation'
     ],
-
+    gallery: [
+      '/ammar-s_portfolio/Elevator_Controller.png'
+    ],
     challenges: [
       'Designed the controller without relying on complete online tutorials.',
       'Spent weeks debugging incorrect state transitions and signal ordering.',
@@ -133,15 +125,8 @@ export const projects = [
       'Visited university outside regular class hours, including Sundays, to continue testing.',
       'Validated the design in TinkerCad before implementing it physically.'
     ],
-
-    implementation:
-      'The controller was implemented on a breadboard using logic gates, D flip-flops, LEDs, a 7447 decoder, and a seven-segment display. The project required multiple redesigns and extensive testing before the hardware behaved according to the intended state transitions.',
-
-    outcome:
-      'Successfully developed a working elevator controller capable of processing floor requests, storing the current state, and displaying the active floor. The project demonstrated the complete transition from Boolean equations to functioning digital hardware.',
-
     takeaways:
-      'This project fundamentally changed the way I approach engineering problems. It taught me that digital systems demand precision—one incorrect wire or one incorrect Boolean expression can prevent an entire system from functioning. Beyond Digital Logic Design, it strengthened my debugging mindset, patience, systematic testing, and confidence in transforming theoretical concepts into working hardware.'
+     'This project fundamentally changed the way I approach engineering problems. It taught me that digital systems demand precision — one incorrect wire or one incorrect Boolean expression can prevent an entire system from functioning. Beyond Digital Logic Design, it strengthened my debugging mindset, patience, systematic testing, and confidence in transforming theoretical concepts into working hardware.'
   }
 }
 ];
