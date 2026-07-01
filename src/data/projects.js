@@ -1,5 +1,5 @@
 
-const TABLEAU =
+export const TABLEAU =
   "https://public.tableau.com/app/profile/muhammad.ammar.saleem/vizzes";
 
 export const projects = [
@@ -89,7 +89,6 @@ export const projects = [
 
   desc: 'Hardware-level finite state machine built on a breadboard and simulated in TinkerCad. Current floor encoded as a 2-bit state (Q1Q0) while floor requests use one-hot encoding (F1–F3). Boolean equations derived from a truth table controlled the Up, Down, and Stop outputs, with the current floor displayed on a seven-segment display.',
 
-  github: 'https://github.com/m2ammar',
 
   // ---------- NEW ----------
   caseStudy: {
