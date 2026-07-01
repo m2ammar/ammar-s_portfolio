@@ -1,7 +1,7 @@
-
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Linkedin, Github, BarChart2, ExternalLink, X } from 'lucide-react';
+import { projects, TABLEAU } from './data/projects';
 
 const EMAIL = 'ma9731501@gmail.com';
 
@@ -14,6 +14,7 @@ export default function App() {
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
   const [hovered, setHovered] = useState(false);
   const [modal, setModal] = useState(null);
+  const [showCaseStudy, setShowCaseStudy] = useState(false);
 
   useEffect(() => {
     const move = (e) => setMouse({ x: e.clientX, y: e.clientY });
@@ -96,7 +97,7 @@ export default function App() {
                   <motion.div key={p.id} layout
                     initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.97 }} transition={{ duration: 0.3 }}
-                    onClick={() => setModal(p)} onMouseEnter={ho(true)} onMouseLeave={ho(false)}
+                    onClick={() => { setModal(p); setShowCaseStudy(false); }} onMouseEnter={ho(true)} onMouseLeave={ho(false)}
                     className="group cursor-pointer rounded-2xl overflow-hidden border border-zinc-800/60 bg-zinc-900/30 hover:border-zinc-700 transition-all duration-300">
 
                     {/* Image */}
@@ -252,17 +253,100 @@ export default function App() {
                 </div>
 
                 <div className="flex flex-wrap gap-3 pt-6 border-t border-zinc-900">
-                  <a href={modal.github} target="_blank" rel="noreferrer"
-                    className="flex items-center gap-2 bg-white text-black text-xs font-medium px-4 py-2 rounded-lg hover:bg-zinc-200 transition-colors">
-                    <Github size={13} /> View on GitHub
-                  </a>
-                  {modal.tableau && (
-                    <a href={modal.tableau} target="_blank" rel="noreferrer"
-                      className="flex items-center gap-2 border border-zinc-700 text-zinc-300 text-xs font-medium px-4 py-2 rounded-lg hover:border-zinc-500 hover:text-white transition-colors">
-                      <BarChart2 size={13} /> Tableau Dashboard
-                    </a>
-                  )}
-                </div>
+  {modal.github && (
+    <a href={modal.github} target="_blank" rel="noreferrer"
+      className="flex items-center gap-2 bg-white text-black text-xs font-medium px-4 py-2 rounded-lg hover:bg-zinc-200 transition-colors">
+      <Github size={13} /> View on GitHub
+    </a>
+  )}
+  {modal.tableau && (
+    <a href={modal.tableau} target="_blank" rel="noreferrer"
+      className="flex items-center gap-2 border border-zinc-700 text-zinc-300 text-xs font-medium px-4 py-2 rounded-lg hover:border-zinc-500 hover:text-white transition-colors">
+      <BarChart2 size={13} /> Tableau Dashboard
+    </a>
+  )}
+</div>
+
+{modal.caseStudy && (
+  <div className="mt-6">
+    {!showCaseStudy ? (
+      <button
+        onClick={() => setShowCaseStudy(true)}
+        className="flex items-center gap-2 text-xs font-mono text-teal-400 hover:text-teal-300 transition-colors"
+      >
+        View full case study →
+      </button>
+    ) : (
+      <div className="mt-6 pt-6 border-t border-zinc-900 space-y-6 text-sm">
+        <div>
+          <h4 className="text-white font-medium mb-2">Abstract</h4>
+          <p className="text-zinc-400 leading-relaxed">{modal.caseStudy.abstract}</p>
+        </div>
+        <div>
+          <h4 className="text-white font-medium mb-2">Overview</h4>
+          <p className="text-zinc-400 leading-relaxed">{modal.caseStudy.overview}</p>
+        </div>
+        {modal.caseStudy.objective && (
+          <div>
+            <h4 className="text-white font-medium mb-2">Objectives</h4>
+            <ul className="text-zinc-400 space-y-1 list-disc list-inside">
+              {modal.caseStudy.objective.map((item, i) => <li key={i}>{item}</li>)}
+            </ul>
+          </div>
+        )}
+        {modal.caseStudy.systemDesign && (
+          <div>
+            <h4 className="text-white font-medium mb-2">System Design</h4>
+            <ul className="text-zinc-400 space-y-1 list-disc list-inside">
+              {modal.caseStudy.systemDesign.map((item, i) => <li key={i}>{item}</li>)}
+            </ul>
+          </div>
+        )}
+        {modal.caseStudy.skills && (
+          <div>
+            <h4 className="text-white font-medium mb-2">Skills Applied</h4>
+            <div className="flex flex-wrap gap-1.5">
+              {modal.caseStudy.skills.map((s, i) => (
+                <span key={i} className="text-[10px] font-mono text-zinc-500 border border-zinc-800 px-2 py-0.5 rounded">{s}</span>
+              ))}
+            </div>
+          </div>
+        )}
+        {modal.caseStudy.challenges && (
+          <div>
+            <h4 className="text-white font-medium mb-2">Challenges</h4>
+            <ul className="text-zinc-400 space-y-1 list-disc list-inside">
+              {modal.caseStudy.challenges.map((item, i) => <li key={i}>{item}</li>)}
+            </ul>
+          </div>
+        )}
+        {modal.caseStudy.implementation && (
+          <div>
+            <h4 className="text-white font-medium mb-2">Implementation</h4>
+            <p className="text-zinc-400 leading-relaxed">{modal.caseStudy.implementation}</p>
+          </div>
+        )}
+        {modal.caseStudy.outcome && (
+          <div>
+            <h4 className="text-white font-medium mb-2">Outcome</h4>
+            <p className="text-zinc-400 leading-relaxed">{modal.caseStudy.outcome}</p>
+          </div>
+        )}
+        {modal.caseStudy.takeaways && (
+          <blockquote className="border-l-2 border-teal-700 pl-4 py-1 italic font-serif text-zinc-300">
+            {modal.caseStudy.takeaways}
+          </blockquote>
+        )}
+        <button
+          onClick={() => setShowCaseStudy(false)}
+          className="text-xs font-mono text-zinc-500 hover:text-white transition-colors"
+        >
+          ← Collapse
+        </button>
+      </div>
+    )}
+  </div>
+)}
               </div>
             </motion.div>
           </motion.div>
