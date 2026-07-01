@@ -74,18 +74,75 @@ export const projects = [
   },
 
   {
-    id: 7,
-    title: "3-Floor Elevator Controller",
-    category: "DLD",
-    year: "2026",
-    image: "/ammar-s_portfolio/Elevator_Controller.png",
-    tags: [
-      "Digital Logic",
-      "Sequential Circuits",
-      "Boolean Algebra",
-      "TinkerCad",
+  id: 7,
+  title: '3-Floor Elevator Controller',
+  category: 'DLD',
+  year: '2026',
+  image: '/ammar-s_portfolio/Elevator_Controller.png',
+
+  tags: [
+    'Digital Logic',
+    'Sequential Circuits',
+    'Boolean Algebra',
+    'TinkerCad'
+  ],
+
+  desc: 'Hardware-level finite state machine built on a breadboard and simulated in TinkerCad. Current floor encoded as a 2-bit state (Q1Q0) while floor requests use one-hot encoding (F1–F3). Boolean equations derived from a truth table controlled the Up, Down, and Stop outputs, with the current floor displayed on a seven-segment display.',
+
+  github: 'https://github.com/m2ammar',
+
+  // ---------- NEW ----------
+  caseStudy: {
+    abstract:
+      'A hardware implementation of a three-floor elevator controller built as part of a Digital Logic Design course. The project combines combinational and sequential logic to simulate real elevator behavior using Boolean equations, D flip-flops, and a seven-segment display.',
+
+    overview:
+      'Developed collaboratively by a three-member team to apply Digital Logic Design concepts to a real-world embedded system. Rather than only completing theoretical exercises, the objective was to design, simulate, build, and debug a complete elevator controller from scratch.',
+
+    objective: [
+      'Apply Digital Logic Design concepts in a practical hardware project.',
+      'Combine combinational and sequential circuits into one complete system.',
+      'Design a controller capable of moving between three floors.',
+      'Implement and verify the circuit using both simulation and physical hardware.'
     ],
-    desc: "Hardware-level finite state machine built on a breadboard and simulated in TinkerCad. Current floor encoded as a 2-bit state (Q1Q0), while floor requests used one-hot encoding (F1F2F3). Boolean equations derived from a 9-state truth table controlled the Up, Down, and Stop outputs. A 7447 decoder drove a seven-segment display to indicate the elevator's current floor.",
-    github: "https://github.com/m2ammar",
-  },
+
+    systemDesign: [
+      'Current floor represented using 2-bit state encoding (Q1Q0).',
+      'Floor requests implemented using one-hot encoding (F1, F2, F3).',
+      'Boolean equations generated from a complete truth table.',
+      'D Flip-Flops used for state storage.',
+      '7447 decoder connected to a seven-segment display for floor indication.'
+    ],
+
+    skills: [
+      'Boolean Algebra',
+      'Karnaugh Maps',
+      'Combinational Logic',
+      'Sequential Circuits',
+      'State Machines',
+      'D Flip-Flops',
+      'Breadboard Prototyping',
+      'Hardware Debugging',
+      'TinkerCad Simulation'
+    ],
+
+    challenges: [
+      'Designed the controller without relying on complete online tutorials.',
+      'Spent weeks debugging incorrect state transitions and signal ordering.',
+      'Built and rebuilt the circuit multiple times after discovering wiring errors.',
+      'Invested additional hardware components after several failed attempts.',
+      'Visited university outside regular class hours, including Sundays, to continue testing.',
+      'Validated the design in TinkerCad before implementing it physically.'
+    ],
+
+    implementation:
+      'The controller was implemented on a breadboard using logic gates, D flip-flops, LEDs, a 7447 decoder, and a seven-segment display. The project required multiple redesigns and extensive testing before the hardware behaved according to the intended state transitions.',
+
+    outcome:
+      'Successfully developed a working elevator controller capable of processing floor requests, storing the current state, and displaying the active floor. The project demonstrated the complete transition from Boolean equations to functioning digital hardware.',
+
+    takeaways:
+      'This project fundamentally changed the way I approach engineering problems. It taught me that digital systems demand precision—one incorrect wire or one incorrect Boolean expression can prevent an entire system from functioning. Beyond Digital Logic Design, it strengthened my debugging mindset, patience, systematic testing, and confidence in transforming theoretical concepts into working hardware.'
+  }
+}
 ];
