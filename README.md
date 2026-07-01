@@ -25,13 +25,12 @@ Key features:
 - **GitHub Pages + GitHub Actions** — automated deployment on push to `main`
 
 ## Project Structure
-src/
-├── App.jsx           # Main application — routing, layout, all page logic
-├── data/
-│   └── projects.js   # Project data and case study content
-├── index.css          # Global styles
-└── main.jsx           # Entry point
-public/                 # Project screenshots and images
+
+- `src/App.jsx` — Main application (routing, layout, all page logic)
+- `src/data/projects.js` — Project data and case study content
+- `src/index.css` — Global styles
+- `src/main.jsx` — Entry point
+- `public/` — Project screenshots and images
 
 
 ## Running Locally
