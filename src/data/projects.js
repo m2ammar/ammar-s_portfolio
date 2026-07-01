@@ -60,6 +60,38 @@ export const projects = [
     tags: ["Java", "JavaFX", "OOP", "MVC"],
     desc: "Desktop HR application built with strict MVC architecture. Polymorphism handles salary calculation across Full-Time, Part-Time, and Contract employees. Role-based access control separates SuperAdmin, SubAdmin, and Employee views. Includes leave request workflow, payslip generation, and CSV persistence across 28 seeded employees. Scored 10/10 at university viva.",
     github: "https://github.com/m2ammar/Payroll-Management-System",
+    caseStudy: {
+      abstract:
+        'A desktop payroll management application built with Java, JavaFX, and MVC architecture, simulating a real-world HR payroll workflow. The system handles role-based access control, polymorphic salary calculation, and CSV-based data persistence for 28 seeded employees. Scored 10/10 at university viva.',
+      objective:
+        'Manual payroll processing is error-prone and time-consuming. The goal was to build a system that digitizes salary calculation across multiple employment types, manages leave requests through a proper approval workflow, and enforces a strict role hierarchy so only authorized personnel can perform sensitive actions — minimizing calculation errors that come with manual, spreadsheet-based payroll.',
+      howItWorks: [
+        'Three-tier role hierarchy: SuperAdmin has full access (add/remove employees, manage SubAdmins, approve leaves, view all payroll); SubAdmin can approve/reject leaves and view payroll but cannot create other admins; Employee can only view their own salary, submit leave requests, and view payslips.',
+        'Polymorphic salary calculation across three employee types — Full-Time (fixed salary + overtime), Part-Time (hourly rate × hours worked), and Contract (fixed amount with expiry tracking) — all handled through a single unified PayrollManager class.',
+        'Each employee carries multiple allowances (Housing, Transport, Medical, Bonus) and deductions (Tax, Pension, Insurance), all factored into the final net salary calculation.',
+        'Leave requests flow from Employee submission to SubAdmin/SuperAdmin dashboard to approval or rejection, with the status update reflected back in the employee\'s view.',
+        'Employee records and accounts persist to a CSV file on first run and reload automatically on subsequent launches — no database required.',
+        'PayrollManager processes monthly payroll for all employees and generates individual payslips, including gross pay, allowances, deductions, and net salary.'
+      ],
+      technologies: [
+        'Java 17', 'JavaFX', 'FXML', 'MVC Architecture', 'Polymorphism', 'CSV Data Persistence', 'Maven', 'Role-Based Access Control'
+      ],
+      gallery: [
+        '/ammar-s_portfolio/PayrollManagement.png',
+        '/ammar-s_portfolio/Superadmin.png',
+        '/ammar-s_portfolio/SuperAdminPayrollHistory.png',
+        '/ammar-s_portfolio/EmployeePreCalculate.png',
+        '/ammar-s_portfolio/EmployeeSalary.png'
+      ],
+      challenges: [
+        'PayrollManager was the hardest piece to get right — it iterates all 28 employees, dispatches salary calculation to the correct subclass via polymorphism, applies allowances and deductions, and generates payslip objects for the current month, all while staying decoupled from the specific employee subtypes.',
+        'Used a MapList pattern to maintain fast lookup between employees and their payslips without duplicating data across the role hierarchy.',
+        'Designing a clean multi-layer MVC architecture in JavaFX from scratch, with UI logic in controllers kept fully separate from business logic in the model layer.',
+        'Managing shared state across multiple controllers through a central AppData object without introducing tight coupling.'
+      ],
+      takeaways:
+        'This project built real confidence — going from calculation logic on paper to a working digital system that a business could actually use. I learned what polymorphism looks like in practice, not just in theory: the same processMonthly() call producing correct, different results depending on which employee subtype it touched. I also learned how to design role-based access control purely through object structure, without a database, and how to keep a growing codebase organized by strictly separating UI from business logic.'
+    }
   },
 
   {
@@ -71,6 +103,36 @@ export const projects = [
     tags: ["Java", "JavaFX", "GUI", "File I/O"],
     desc: "JavaFX desktop application for managing vehicle bookings. Users select a vehicle, enter rental duration, and get an automatically calculated cost. Focused on clean separation of UI from backend logic, input validation, and error handling.",
     github: "https://github.com/m2ammar/VehicleRentalSystem",
+    caseStudy: {
+      abstract:
+        '"Wheels on Deals" — a JavaFX-based vehicle rental management system built during Semester 1, back when I was still learning to use a laptop for real development work. Built with a team of two others, with me taking the lead role, it manages bookings, tracks fleet availability in real time, and handles returns for a small rental business fleet spanning nine vehicle types.',
+      objective:
+        'A small vehicle rental business needs a way to manage bookings, track availability, and handle returns — without relying on a spreadsheet. The goal was to build a simple desktop application solving that problem end-to-end for two types of users: customers booking vehicles, and administrators managing the fleet.',
+      howItWorks: [
+        'Dual login system separating Customer and Administrator roles — customers can book vehicles, view availability, and return vehicles; admins see full fleet status across all nine vehicle types.',
+        'Customers book a vehicle for a specified number of days, with rental cost automatically calculated based on the vehicle\'s daily rate.',
+        'Returning a vehicle updates its availability count in real time, so the fleet view is always accurate.',
+        'Input validation and basic error handling guard against invalid bookings, since validation is critical for anything involving cost calculation.',
+        'The problem was broken into small, single-purpose methods rather than one large booking function, keeping UI logic (JavaFX) fully separate from backend logic (plain Java classes).'
+      ],
+      technologies: [
+        'Java', 'JavaFX', 'GUI Design', 'Input Validation', 'Multi-Method Programming', 'IntelliJ IDEA'
+      ],
+      gallery: [
+        '/ammar-s_portfolio/Login_vehicle.png',
+        '/ammar-s_portfolio/Available_vahicle.png',
+        '/ammar-s_portfolio/Administrator_Vehicle.png',
+        '/ammar-s_portfolio/Home_vehicle.png'
+      ],
+      challenges: [
+        'This was built in Semester 1, at a point where I was still learning basic laptop workflows alongside programming itself — every part of the build was a double challenge.',
+        'Had only gotten into CSS about two months prior, so styling and UI decisions were unfamiliar territory at the time.',
+        'Ran into recurring JavaFX SDK configuration issues that weren\'t working correctly, which slowed down early development.',
+        'Working in a team of two others while taking the lead meant coordinating design decisions and dividing backend/frontend responsibilities, on top of writing the code itself.'
+      ],
+      takeaways:
+        'This project mattered less for its complexity and more for what it proved to me — that I could take a real business problem, break it into pieces, and ship something that worked, at a point when everything about development still felt unfamiliar. It taught me multi-method design, how to manage state across multiple screens without a database, and how to separate UI logic from backend logic cleanly. More than the code, it was the first project that genuinely boosted my confidence going forward.'
+    }
   },
 
   {

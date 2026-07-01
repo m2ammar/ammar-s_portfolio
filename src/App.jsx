@@ -14,6 +14,7 @@ export default function App() {
   const [hovered, setHovered] = useState(false);
   const [modal, setModal] = useState(null);
   const [caseStudyProject, setCaseStudyProject] = useState(null);
+  const [galleryIndex, setGalleryIndex] = useState(0);
 
   useEffect(() => {
     const move = (e) => setMouse({ x: e.clientX, y: e.clientY });
@@ -34,9 +35,10 @@ export default function App() {
   const ho = (v) => () => setHovered(v);
 
   const openCaseStudy = (p) => {
-    setCaseStudyProject(p);
-    setModal(null);
-    setPage('CaseStudy');
+   setCaseStudyProject(p);
+   setModal(null);
+   setGalleryIndex(0);
+   setPage('CaseStudy');
   };
 
   return (
@@ -279,15 +281,40 @@ export default function App() {
                     {caseStudyProject.caseStudy.gallery && caseStudyProject.caseStudy.gallery.length > 0 && (
                       <section>
                         <h2 className="text-white font-medium text-lg mb-3">Gallery</h2>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                          {caseStudyProject.caseStudy.gallery.map((src, i) => (
-                            <div key={i} className="rounded-xl overflow-hidden border border-zinc-800 bg-zinc-900">
-                              <img src={src} alt={`${caseStudyProject.title} ${i + 1}`} className="w-full h-48 object-cover object-top" />
-                            </div>
-                          ))}
-                        </div>
-                      </section>
-                    )}
+
+                          {caseStudyProject.caseStudy.gallery.length === 1 ? (
+                            <div className="rounded-xl overflow-hidden border border-zinc-800 bg-zinc-900">
+                              <img src={caseStudyProject.caseStudy.gallery[0]} alt={caseStudyProject.title}
+                               className="w-full h-72 md:h-96 object-cover object-top" />
+                              </div>
+                          ) : (
+                      <div className="relative rounded-xl overflow-hidden border border-zinc-800 bg-zinc-900">
+                          <img
+                           src={caseStudyProject.caseStudy.gallery[galleryIndex]}
+                           alt={`${caseStudyProject.title} ${galleryIndex + 1}`}
+                           className="w-full h-72 md:h-96 object-cover object-top"
+                      />
+
+              <button
+                onClick={() => setGalleryIndex((i) => (i === 0 ? caseStudyProject.caseStudy.gallery.length - 1 : i - 1))}
+                className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/60 border border-zinc-700 flex items-center justify-center text-white hover:bg-black/80 transition-colors"
+              >
+                ←
+              </button>
+              <button
+              onClick={() => setGalleryIndex((i) => (i === caseStudyProject.caseStudy.gallery.length - 1 ? 0 : i + 1))}
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/60 border border-zinc-700 flex items-center justify-center text-white hover:bg-black/80 transition-colors"
+              >
+              →
+              </button>
+
+        <div className="absolute bottom-3 right-3 text-[10px] font-mono text-white bg-black/60 px-2 py-1 rounded-full">
+          {galleryIndex + 1} / {caseStudyProject.caseStudy.gallery.length}
+        </div>
+      </div>
+    )}
+  </section>
+)}
 
                     {caseStudyProject.caseStudy.challenges && (
                       <section>
