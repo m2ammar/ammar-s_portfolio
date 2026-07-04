@@ -53,7 +53,7 @@ export const projects = [
     tags: ["MySQL", "Tableau", "Stored Procedures", "Window Functions"],
     desc: "A retail chain simulation tracking 7,000+ sales rows across 6 Pakistani cities. Built a stored procedure to auto-generate transactions mapped to local calendar events, then used RANK(), DENSE_RANK(), and LAG() to answer 9 business questions — promotion impact, MoM revenue shifts, top customers, and store rankings.",
     github: "https://github.com/m2ammar/PakMart_Retail_Analysis",
-    tableau: TABLEAU,
+    tableau: "https://public.tableau.com/app/profile/muhammad.ammar.saleem/viz/PakMartRetailAnalytics/PakMartRetailAnalytics",
     caseStudy: {
       abstract:
         "A self-built SQL and Tableau project simulating a Pakistani retail chain, PakMart, complete with realistic product categories, customer names, store locations, and promotional calendar events. Sales data is randomly generated through a stored procedure so the underlying numbers aren't meant to reflect a real business — the point of the project was the SQL engineering behind it, not the business itself.",
@@ -91,7 +91,7 @@ export const projects = [
     tags: ["MySQL", "Tableau", "Chained CTEs", "Multi-JOIN"],
     desc: "19-table relational database mapping health KPIs across 197 countries — mortality rates, healthcare spending, vaccination coverage, pandemic response, and more. The flagship SQL query chains 4 CTEs to produce a country-level scorecard comparing spending tier against life expectancy status in a single output.",
     github: "https://github.com/m2ammar/Global-Healthcare-System",
-    tableau: TABLEAU,
+    tableau: "https://public.tableau.com/app/profile/muhammad.ammar.saleem/viz/GlobalHealthcareSystemDashboard/GlobalHealthcareSystemDashboard",
     caseStudy: {
       abstract:
         "A 19-table relational healthcare analytics database built in MySQL to analyze global healthcare KPIs across 190+ countries, using data modeled on real WHO, World Bank, and IHME sources. Built to examine how healthcare systems performed across regions during critical global periods, and to demonstrate the ability to work with large, interconnected datasets at a professional level.",
@@ -129,7 +129,7 @@ export const projects = [
     tags: ["MySQL", "Tableau", "Audit Logging", "Subqueries"],
     desc: "9-table banking simulation with 500 customers, 30 branches across 7 cities, and 150 employees. Covers savings/current/fixed accounts, loans with payment history, credit cards, and an audit log tracking changes across all entities. Outputs feed directly into a Tableau executive dashboard.",
     github: "https://github.com/m2ammar/Pakistan-Financial-Services",
-    tableau: TABLEAU,
+    tableau: "https://public.tableau.com/app/profile/muhammad.ammar.saleem/viz/PakistanFinancialServicesExecutiveDashboard/PakistanFinancialServicesExecutiveDashboard",
     caseStudy: {
       abstract:
         "A relational database simulating a Pakistani financial institution — 9 normalized tables covering 500 customers, 30 branches across 7 cities, and a Tableau executive dashboard built on top of it.",
@@ -164,7 +164,7 @@ export const projects = [
     tags: ["MySQL", "Tableau", "Real Data", "YoY Analysis"],
     desc: "Built on real data from the Pakistan Textile Council and Pakistan Bureau of Statistics. Tracks quarterly export values and volumes from 2021–2025 across product categories and destination countries. Key finding: North America dominates exports, and value-added products consistently outperform raw textiles.",
     github: "https://github.com/m2ammar/Pakistan-textile-export-analysis",
-    tableau: TABLEAU,
+    tableau: "https://public.tableau.com/app/profile/muhammad.ammar.saleem/viz/Pakistanstextilegrowthandcausesoflessrevenue/Pakistanstextilegrowthandcausesoflessrevenue",
     caseStudy: {
       abstract:
         "A data analysis project on Pakistan's textile export industry, built using real data from the Pakistan Textile Council (PTC) and Pakistan Bureau of Statistics (PBS) — one of the first projects where the underlying numbers were real, not self-generated.",
