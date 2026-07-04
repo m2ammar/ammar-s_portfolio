@@ -111,7 +111,7 @@ export default function App() {
                     onClick={() => setModal(p)} onMouseEnter={ho(true)} onMouseLeave={ho(false)}
                     className="group cursor-pointer rounded-2xl overflow-hidden border border-zinc-800/60 bg-zinc-900/30 hover:border-zinc-700 transition-all duration-300">
 
-                    {/* Image */}
+                    {/* Image - card thumbnail keeps cover since it's just a preview crop */}
                     <div className="w-full h-52 overflow-hidden bg-zinc-900">
                       <img src={p.image} alt={p.title}
                         className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
@@ -218,10 +218,10 @@ export default function App() {
                   <ArrowLeft size={14} /> Back to Work
                 </button>
 
-                {/* Hero image */}
-                <div className="w-full h-72 md:h-96 overflow-hidden bg-zinc-900 rounded-2xl mb-8">
+                {/* Hero image - object-contain so full screenshot is visible, letterboxed on a dark backdrop */}
+                <div className="w-full h-72 md:h-[28rem] overflow-hidden bg-zinc-950 rounded-2xl mb-8 flex items-center justify-center border border-zinc-900">
                   <img src={caseStudyProject.image} alt={caseStudyProject.title}
-                    className="w-full h-full object-cover object-top" />
+                    className="w-full h-full object-contain" />
                 </div>
 
                 <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">
@@ -283,16 +283,16 @@ export default function App() {
                         <h2 className="text-white font-medium text-lg mb-3">Gallery</h2>
 
                           {caseStudyProject.caseStudy.gallery.length === 1 ? (
-                            <div className="rounded-xl overflow-hidden border border-zinc-800 bg-zinc-900">
+                            <div className="rounded-xl overflow-hidden border border-zinc-800 bg-zinc-950 flex items-center justify-center">
                               <img src={caseStudyProject.caseStudy.gallery[0]} alt={caseStudyProject.title}
-                               className="w-full h-72 md:h-96 object-cover object-top" />
+                               className="w-full h-72 md:h-[28rem] object-contain" />
                               </div>
                           ) : (
-                      <div className="relative rounded-xl overflow-hidden border border-zinc-800 bg-zinc-900">
+                      <div className="relative rounded-xl overflow-hidden border border-zinc-800 bg-zinc-950 flex items-center justify-center">
                           <img
                            src={caseStudyProject.caseStudy.gallery[galleryIndex]}
                            alt={`${caseStudyProject.title} ${galleryIndex + 1}`}
-                           className="w-full h-72 md:h-96 object-cover object-top"
+                           className="w-full h-72 md:h-[28rem] object-contain"
                       />
 
               <button
@@ -406,8 +406,9 @@ export default function App() {
                 <X size={14} />
               </button>
 
-              <div className="w-full h-60 overflow-hidden bg-zinc-900">
-                <img src={modal.image} alt={modal.title} className="w-full h-full object-cover object-top" />
+              {/* Modal preview image - object-contain so nothing gets cropped, dark backdrop fills any letterbox space */}
+              <div className="w-full h-64 overflow-hidden bg-zinc-950 flex items-center justify-center">
+                <img src={modal.image} alt={modal.title} className="w-full h-full object-contain" />
               </div>
 
               <div className="p-8">
