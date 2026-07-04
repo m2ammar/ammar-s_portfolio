@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Linkedin, Github, BarChart2, ExternalLink, X, ArrowLeft } from 'lucide-react';
 import { projects, TABLEAU } from './data/projects';
+import Home from './components/Home';
 
 const EMAIL = 'ma9731501@gmail.com';
 
@@ -9,7 +10,7 @@ const TABS = ['All', 'SQL', 'Java', 'DLD'];
 
 export default function App() {
   const [tab, setTab] = useState('All');
-  const [page, setPage] = useState('Work');
+  const [page, setPage] = useState('Home');
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
   const [hovered, setHovered] = useState(false);
   const [modal, setModal] = useState(null);
@@ -27,7 +28,7 @@ export default function App() {
   }, [modal]);
 
   useEffect(() => {
-    if (page === 'CaseStudy') window.scrollTo(0, 0);
+    if (page === 'CaseStudy' || page === 'Home') window.scrollTo(0, 0);
   }, [page]);
 
   const filtered = tab === 'All' ? projects : projects.filter(p => p.category === tab);
@@ -53,12 +54,12 @@ export default function App() {
 
       {/* Nav */}
       <nav className="max-w-6xl mx-auto px-6 py-7 flex justify-between items-center relative z-40">
-        <button onClick={() => setPage('Work')} onMouseEnter={ho(true)} onMouseLeave={ho(false)} className="text-left">
+        <button onClick={() => setPage('Home')} onMouseEnter={ho(true)} onMouseLeave={ho(false)} className="text-left">
           <span className="font-semibold text-base tracking-tight text-white">Muhammad Ammar Saleem</span>
           <span className="block text-[10px] font-mono text-zinc-500 tracking-widest uppercase mt-0.5">Data Scientist</span>
         </button>
         <div className="flex items-center gap-7 text-sm font-mono text-zinc-400">
-          {['Work', 'About'].map(p => (
+          {['Home', 'Work', 'About'].map(p => (
             <button key={p} onClick={() => setPage(p)} onMouseEnter={ho(true)} onMouseLeave={ho(false)}
               className={`transition-colors hover:text-white ${page === p ? 'text-white' : ''}`}>
               {p}
@@ -73,7 +74,9 @@ export default function App() {
 
       {/* Pages */}
       <AnimatePresence mode="wait">
-        {page === 'Work' ? (
+        {page === 'Home' ? (
+          <Home key="home" setPage={setPage} ho={ho} />
+        ) : page === 'Work' ? (
           <motion.main key="work"
             initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -16 }}
             transition={{ duration: 0.35 }}
