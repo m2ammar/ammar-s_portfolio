@@ -74,6 +74,17 @@ export default function Home({ setPage, ho }) {
       {/* Tech marquee */}
       <TechMarquee />
 
+      {/* Download Resume */}
+      <div className="text-center py-8">
+        <a href="/ammar-s_portfolio/Ammar_Saleem_Resume.pdf" download
+          onMouseEnter={ho(true)} onMouseLeave={ho(false)}
+          className="inline-flex items-center gap-2 text-sm font-mono text-zinc-400 hover:text-white transition-colors underline underline-offset-4 decoration-zinc-700 hover:decoration-white">
+          Download Resume ↓
+        </a>
+      </div>
+
+      {/* Contact section */}
+
       {/* Contact section */}
       <div className="max-w-6xl mx-auto px-6 py-24 text-center">
         <p className="text-[clamp(1.6rem,3.5vw,2.6rem)] font-light italic font-serif text-zinc-300 mb-10">

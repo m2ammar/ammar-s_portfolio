@@ -328,5 +328,68 @@ export const projects = [
     takeaways:
      'This project fundamentally changed the way I approach engineering problems. It taught me that digital systems demand precision — one incorrect wire or one incorrect Boolean expression can prevent an entire system from functioning. Beyond Digital Logic Design, it strengthened my debugging mindset, patience, systematic testing, and confidence in transforming theoretical concepts into working hardware.'
   }
+},
+
+{
+  id: 9,
+  title: "Landing Pages — Aether & Aura",
+  category: "Others",
+  year: "2025",
+  image: "/ammar-s_portfolio/Aether1.png",
+  tags: ["HTML", "CSS", "JavaScript"],
+  desc: "Two HTML/CSS/JS landing pages built during Sem 1 ICT practice — Aether (dark-tech SaaS) and Aura (minimalist lifestyle). Practicing these made the actual final exam, which asked for something harder, feel familiar instead of intimidating.",
+  github: "https://github.com/m2ammar/Web-Dev-Projects-",
+  caseStudy: {
+    abstract: "Two landing pages built with HTML, CSS, and JavaScript as web development practice ahead of my Semester 1 ICT final exam.",
+    howItWorks: [
+      "Aether — a dark-tech SaaS landing page with a floating navbar, split hero section with an image slider, and a stats bar (uptime, latency, active nodes).",
+      "Aura — a minimalist lifestyle brand page with a centered hero, full-width image slider, feature cards section, and a clean split footer."
+    ],
+    technologies: ["HTML", "CSS", "JavaScript (no frameworks)"],
+    gallery: ["/ammar-s_portfolio/Aether1.png", "/ammar-s_portfolio/Aura1.png"],
+    takeaways: "Early on, CSS layouts felt overwhelming — the breakthrough came when I started thinking in boxes, every element as a container with its own space. Once that clicked, Flexbox became straightforward. These same concepts showed up in my actual ICT final exam, which made the paper feel familiar instead of intimidating."
+  }
+},
+{
+  id: 10,
+  title: "JavaFX Calculator",
+  category: "Others",
+  year: "2025",
+  image: "/ammar-s_portfolio/Calculator.png",
+  tags: ["Java", "JavaFX"],
+  desc: "A calculator built in Java with a JavaFX GUI — one of my earliest GUI projects. Getting the JavaFX SDK and VM options configured correctly was its own battle before a single button worked.",
+  github: "https://github.com/m2ammar/Java-FX",
+  caseStudy: {
+    abstract: "Originally a class assignment, extended into a complete calculator with a JavaFX graphical interface.",
+    howItWorks: [
+      "Standard arithmetic operations (add, subtract, multiply, divide) handled through a JavaFX GUI with button-based input.",
+      "Event-driven design — button clicks trigger calculation logic and update the display in real time."
+    ],
+    technologies: ["Java", "JavaFX", "Scene Builder"],
+    gallery: ["/ammar-s_portfolio/Calculator.png", "/ammar-s_portfolio/Calculator2.png"],
+    takeaways: "Getting the JavaFX SDK and VM options configured correctly was its own battle before a single button worked — module path errors, wrong JDK versions, VM argument issues. It took far longer than expected, but solving it taught me more about environment setup than the calculator logic itself did."
+  }
+},
+{
+  id: 11,
+  title: "Mini Apps",
+  category: "Others",
+  year: "2025",
+  image: "/ammar-s_portfolio/mini-apps-preview.png",
+  tags: ["Java", "File I/O", "OOP"],
+  desc: "Three console-based Java applications — Expense Tracker, Inventory & Stock Management, and Student Grading System — built early on, when even basic menu-driven logic felt hard.",
+  github: "https://github.com/m2ammar/Mini_Apps",
+  caseStudy: {
+    abstract: "A collection of small, self-contained Java console applications, each simulating a real-world utility with menu-driven interaction, arrays/ArrayLists, and basic file I/O.",
+    howItWorks: [
+      "Personal Expense Tracker — tracks expenses across four categories with running totals.",
+      "Inventory & Stock Management System — add/update/search/delete/sort products, with file persistence via FileWriter/BufferedReader.",
+      "Student Grading System — records marks across five subjects, calculates grades and percentages, and includes a partial JavaFX GUI extension."
+    ],
+    technologies: ["Java", "ArrayList", "File I/O", "Static Methods"],
+    gallery: ["/ammar-s_portfolio/mini-apps-preview.png"],
+    takeaways: "Building these reinforced core Java fundamentals — arrays vs ArrayLists, static methods for shared state, menu-driven CLI design, and basic file persistence. The Student Grading System's JavaFX extension was left unfinished, reflecting ongoing progression rather than forced perfection."
+  }
 }
+
 ];

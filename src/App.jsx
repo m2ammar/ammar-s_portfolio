@@ -6,7 +6,7 @@ import Home from './components/Home';
 
 const EMAIL = 'ma9731501@gmail.com';
 
-const TABS = ['All', 'SQL', 'Java', 'DLD'];
+const TABS = ['All', 'SQL', 'Java', 'DLD', 'Others'];
 
 export default function App() {
   const [tab, setTab] = useState('All');
@@ -158,7 +158,7 @@ export default function App() {
                   I'm Ammar, a Data Science student at KSBL Karachi. I began my university journey in September 2025 with no prior computing background. Since then, I've independently learned Java, SQL, Python, Git/GitHub, and Tableau — building practical projects that extend beyond classroom assignments.
                 </p>
                 <p>
-                  My portfolio includes a Global Healthcare System database covering 197 countries and 19 relational tables, a Pakistan Financial Services analytics project, PakMart Retail Analytics, and a JavaFX Payroll Management System. Through these projects, I've developed experience in database design, data analysis, business intelligence, dashboard development, and problem-solving.
+                  My portfolio includes a Fraud Detection Analytics project analyzing 6.36 million financial transactions with a normalized relational schema, a Global Healthcare System database covering 197 countries and 19 relational tables, Pakistan Financial Services analytics, PakMart Retail Analytics, and a JavaFX Payroll Management System. Through these projects, I've developed experience in database design, data analysis, business intelligence, dashboard development, and problem-solving.
                 </p>
                 <p>
                   I enjoy transforming raw data into meaningful insights and building solutions that address real-world business challenges. My interests include data analytics, business intelligence, data visualization, and the foundations of machine learning.
