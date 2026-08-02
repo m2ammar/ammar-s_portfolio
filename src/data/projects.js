@@ -8,7 +8,7 @@ export const projects = [
     title: "Indus Hospital Operations Intelligence Database",
     category: "SQL",
     year: "2026",
-    image: "/ammar-s_portfolio/public/indus-hospital/Executive_Overview.png",
+    image: "/ammar-s_portfolio/indus-hospital/Executive_Overview.png",
     tags: ["MySQL", "Python", "Tableau", "Data Normalization", "ERD"],
     desc: "A full hospital operations database and 4-page executive dashboard built during a 40-hour IT internship at Indus Hospital — 11 tables, ~77,740 rows of synthetic data, taken from a blank schema to a polished, presentable deliverable.",
     github: "https://github.com/m2ammar/Indus-Hospital-Operations-Intelligence-Database",
@@ -36,10 +36,10 @@ export const projects = [
         "MySQL", "MySQL Workbench", "Python (synthetic data generation)", "Tableau Public", "Data Normalization (3NF)", "ERD Design", "CTEs & Window Functions"
       ],
       gallery: [
-        "/ammar-s_portfolio/public/indus-hospital/Executive_Overview.png",
-        "/ammar-s_portfolio/public/indus-hospital/Patient_Demographics.png",
-        "/ammar-s_portfolio/public/indus-hospital/OPD_&_Emergency.png",
-        "/ammar-s_portfolio/public/indus-hospital/Surgery_&_Donation.png"
+        "/ammar-s_portfolio/indus-hospital/Executive_Overview.png",
+        "/ammar-s_portfolio/indus-hospital/Patient_Demographics.png",
+        "/ammar-s_portfolio/indus-hospital/OPD_&_Emergency.png",
+        "/ammar-s_portfolio/indus-hospital/Surgery_&_Donation.png"
       ],
       challenges: [
         "Hit repeated Tableau Public crashes (\"Bad Connection,\" Error 81B3934F) when adding the full 11-table relationship model at once. Diagnosed it as a scale problem — not a bad relationship — by successfully testing one table, then a two-table relationship, in isolation.",
@@ -384,7 +384,7 @@ export const projects = [
   title: "Landing Pages — Aether & Aura",
   category: "Web Development",
   year: "2025",
-  image: "/ammar-s_portfolio/public/web-development/Aether1.png",
+  image: "/ammar-s_portfolio/web-development/Aether1.png",
   tags: ["HTML", "CSS", "JavaScript"],
   desc: "Two HTML/CSS/JS landing pages built during Sem 1 ICT practice — Aether (dark-tech SaaS) and Aura (minimalist lifestyle). Practicing these made the actual final exam, which asked for something harder, feel familiar instead of intimidating.",
   github: "https://github.com/m2ammar/Web-Dev-Projects-",
@@ -395,7 +395,7 @@ export const projects = [
       "Aura — a minimalist lifestyle brand page with a centered hero, full-width image slider, feature cards section, and a clean split footer."
     ],
     technologies: ["HTML", "CSS", "JavaScript (no frameworks)"],
-    gallery: ["/ammar-s_portfolio/public/web-development/Aether1.png", "/ammar-s_portfolio/public/web-development/Aura1.png"],
+    gallery: ["/ammar-s_portfolio/web-development/Aether1.png", "/ammar-s_portfolio/web-development/Aura1.png"],
     takeaways: "Early on, CSS layouts felt overwhelming — the breakthrough came when I started thinking in boxes, every element as a container with its own space. Once that clicked, Flexbox became straightforward. These same concepts showed up in my actual ICT final exam, which made the paper feel familiar instead of intimidating."
   }
 },
@@ -405,7 +405,7 @@ export const projects = [
   title: "Interactive CSS Styler",
   category: "Web Development",
   year: "2025",
-  image: "/ammar-s_portfolio/public/web-development/Interactive_CSS_Styler.png",
+  image: "/ammar-s_portfolio/web-development/Interactive_CSS_Styler.png",
   tags: ["HTML", "CSS", "JavaScript"],
   desc: "A live styling playground — sliders and color pickers control a real element in real time, using direct DOM manipulation and event handling rather than static styling.",
   github: "https://github.com/m2ammar/web-fundamentals-lab",
@@ -417,8 +417,8 @@ export const projects = [
     ],
     technologies: ["HTML", "CSS", "JavaScript (DOM Manipulation, Event Handling)"],
     gallery: [
-      "/ammar-s_portfolio/public/web-development/Interactive_CSS_Styler.png",
-      "/ammar-s_portfolio/public/web-development/Interactive_CSS_Styler_2.png"
+      "/ammar-s_portfolio/web-development/Interactive_CSS_Styler.png",
+      "/ammar-s_portfolio/web-development/Interactive_CSS_Styler_2.png"
     ],
     takeaways: "This was the first exercise where JavaScript felt like it was actually controlling the page rather than just responding to a button click — connecting an input's live value straight to an element's style property made event-driven programming click in a way static exercises hadn't."
   }
@@ -429,7 +429,7 @@ export const projects = [
   title: "Filterable Photo Gallery",
   category: "Web Development",
   year: "2025",
-  image: "/ammar-s_portfolio/public/web-development/Filterable_Photo_Gallery.png",
+  image: "/ammar-s_portfolio/web-development/Filterable_Photo_Gallery.png",
   tags: ["HTML", "CSS", "JavaScript"],
   desc: "A 23-image gallery with a category sidebar and prev/next navigation — the most complete 'real product' feel of the Web Fundamentals Lab exercises.",
   github: "https://github.com/m2ammar/web-fundamentals-lab",
@@ -440,7 +440,7 @@ export const projects = [
       "Prev/next navigation controls let a user step through the currently filtered set of images one at a time."
     ],
     technologies: ["HTML", "CSS", "JavaScript (DOM Filtering, Navigation Logic)"],
-    gallery: ["/ammar-s_portfolio/public/web-development/Filterable_Photo_Gallery.png"],
+    gallery: ["/ammar-s_portfolio/web-development/Filterable_Photo_Gallery.png"],
     takeaways: "This was the exercise where a UI stopped feeling like a static layout and started feeling like a small product — filtering and navigation together meant thinking about state (which category is active, which image index is current) instead of just styling elements."
   }
 },
@@ -450,7 +450,7 @@ export const projects = [
   title: "Student Registration Form",
   category: "Web Development",
   year: "2025",
-  image: "/ammar-s_portfolio/public/web-development/registration-form.png",
+  image: "/ammar-s_portfolio/web-development/registration-form.png",
   tags: ["HTML", "CSS"],
   desc: "A clean, structured registration form — fieldset/legend grouping, a full range of input types, and card styling with hover states. My cleanest structured-HTML piece.",
   github: "https://github.com/m2ammar/HTML-CSS-Fundamentals",
@@ -461,7 +461,7 @@ export const projects = [
       "Covers the full range of common input types — text, email, number, radio, checkbox, select, and textarea — inside a styled card layout with hover states."
     ],
     technologies: ["HTML (Semantic Forms)", "CSS (Card Layout, Hover States)"],
-    gallery: ["/ammar-s_portfolio/public/web-development/registration-form.png"],
+    gallery: ["/ammar-s_portfolio/web-development/registration-form.png"],
     takeaways: "This was where form structure stopped being an afterthought — using fieldset and legend instead of generic divs made the form both more accessible and easier to style consistently, and it's the piece that best shows I understand form UX rather than just visual layout."
   }
 },
@@ -471,7 +471,7 @@ export const projects = [
   title: "Course Sidebar Hover Demo",
   category: "Web Development",
   year: "2025",
-  image: "/ammar-s_portfolio/public/web-development/Course_Sidebar_Hover_Demo.png",
+  image: "/ammar-s_portfolio/web-development/Course_Sidebar_Hover_Demo.png",
   tags: ["HTML", "CSS"],
   desc: "A course sidebar layout with hover-state polish — practicing layout structure and interactive detail together.",
   github: "https://github.com/m2ammar/web-fundamentals-lab",
@@ -483,8 +483,8 @@ export const projects = [
     ],
     technologies: ["HTML", "CSS (Hover States, Layout)"],
     gallery: [
-      "/ammar-s_portfolio/public/web-development/Course_Sidebar_Hover_Demo.png",
-      "/ammar-s_portfolio/public/web-development/Course_Sidebar_Hover_Demo_2.png"
+      "/ammar-s_portfolio/web-development/Course_Sidebar_Hover_Demo.png",
+      "/ammar-s_portfolio/web-development/Course_Sidebar_Hover_Demo_2.png"
     ],
     takeaways: "A smaller exercise than the others, but useful for practicing the kind of layout + hover polish that shows up constantly in real navigation UI — the sidebar pattern here is one I'd reuse directly in a larger project."
   }
