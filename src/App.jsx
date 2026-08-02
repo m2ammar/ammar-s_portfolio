@@ -6,7 +6,7 @@ import Home from './components/Home';
 
 const EMAIL = 'ma9731501@gmail.com';
 
-const TABS = ['All', 'SQL', 'Java', 'DLD', 'Others'];
+const TABS = ['All', 'SQL', 'Java', 'DLD', 'Web Development', 'Others'];
 
 export default function App() {
   const [tab, setTab] = useState('All');

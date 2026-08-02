@@ -4,6 +4,55 @@ export const TABLEAU =
 export const projects = [
 
   {
+    id: 0,
+    title: "Indus Hospital Operations Intelligence Database",
+    category: "SQL",
+    year: "2026",
+    image: "/ammar-s_portfolio/indus-hospital/01-executive-overview.png",
+    tags: ["MySQL", "Python", "Tableau", "Data Normalization", "ERD"],
+    desc: "A full hospital operations database and 4-page executive dashboard built during a 40-hour IT internship at Indus Hospital — 11 tables, ~77,740 rows of synthetic data, taken from a blank schema to a polished, presentable deliverable.",
+    github: "https://github.com/m2ammar/Indus-Hospital-Operations-Intelligence-Database",
+    tableau: "https://public.tableau.com/app/profile/muhammad.ammar.saleem/viz/IndusHospitalOperationIntelligence/IndusHospitalOperationsIntelligence",
+    caseStudy: {
+      abstract:
+        "Indus Hospital exists because its founder, Dr. Abdul Bari, turned down opportunities abroad to rebuild care for patients who previously had almost nothing — that context is part of why this project felt different from a self-initiated one. This is a full hospital operations database and 4-page executive dashboard built during a 40-hour IT internship at Indus Hospital — 11 tables, 12,000 patients and 18,000 admissions worth of synthetic data, taken from a blank schema to a polished, presentable deliverable. My first internship, and my first project built for a real client rather than self-initiated.",
+      objective:
+        "Design a normalized schema that could realistically model end-to-end hospital operations — patients, admissions, doctors, wards, beds, emergency visits, OPD visits, diseases, surgeries, and donations — then generate a synthetic dataset at scale and build an executive-level Tableau dashboard on top of it, all within a fixed 40-hour internship window.",
+      problemStatement:
+        "A hospital generates operational data across many disconnected fronts — admissions, OPD visits, emergency triage, surgeries, donations — and without a unified system, there's no single view of how the hospital is actually performing: which departments are under the most load, how patients move through the system, or whether donation campaigns are actually sustaining specific care areas. The goal was to design a database and dashboard that could answer those questions at an executive level, in a single place.",
+      howItWorks: [
+        "Designed an 11-table normalized (3NF) MySQL schema covering the full patient lifecycle, from admission through OPD/emergency visits to surgeries and donations.",
+        "Generated a synthetic dataset programmatically in Python (VS Code) — 12,000 patients, 18,000 admissions, 6,000 emergency visits, 180 doctors — split across dedicated scripts (generate_core.py, generate_emergency.py, generate_opd.py, generate_surgeries.py) rather than one monolithic generator.",
+        "Wrote 23 analytical SQL KPI queries using CTEs and window functions to answer real operational questions across patient demographics, OPD/emergency load, surgeries, and donations.",
+        "Exported clean, post-verification CSVs into a dedicated data/tableau/ folder, kept separate from raw data, since Tableau Public has no live MySQL connector.",
+        "Built a 4-page executive dashboard — Executive Overview, Patient Demographics, OPD & Emergency, Surgery & Donation — using a premium teal-on-black theme.",
+        "Created a pre-joined opd_visits_enriched.csv (OPD visits joined with disease names in SQL) specifically to avoid a fragile nested join inside Tableau.",
+        "Executive Overview surfaced the operational baseline: 4.5-day average length of stay, 17.66-year average doctor experience, a 50% surgeon ratio, and Orthopedics as the busiest department with 2,483 admissions.",
+        "Patient Demographics showed a 7,241-to-4,759 male-to-female split and, more importantly, an insurance gap — 7,179 patients uninsured versus 2,396 insured — a real access-to-care signal, not just a chart.",
+        "OPD & Emergency revealed a 30% OPD follow-up rate, 4,270 patients treated and discharged versus 1,323 admitted, and emergency triage skewed toward non-urgent cases (3,309) over critical (589) — useful for understanding where emergency capacity is actually being spent.",
+        "Surgery & Donations found Pediatrics leading surgical volume at 771 cases, a 3,196-to-480 completed-to-cancelled surgery ratio, and Cardiac Care as the top-funded donation campaign at $9.3M with a 25.2% recurring donor rate."
+      ],
+      technologies: [
+        "MySQL", "MySQL Workbench", "Python (synthetic data generation)", "Tableau Public", "Data Normalization (3NF)", "ERD Design", "CTEs & Window Functions"
+      ],
+      gallery: [
+        "/ammar-s_portfolio/indus-hospital/Executive_Overview.png",
+        "/ammar-s_portfolio/indus-hospital/Patient_Demographics.png",
+        "/ammar-s_portfolio/indus-hospital/OPD_&_Emergency.png",
+        "/ammar-s_portfolio/indus-hospital/Surgery_&_Donation.png"
+      ],
+      challenges: [
+        "Hit repeated Tableau Public crashes (\"Bad Connection,\" Error 81B3934F) when adding the full 11-table relationship model at once. Diagnosed it as a scale problem — not a bad relationship — by successfully testing one table, then a two-table relationship, in isolation.",
+        "Root cause turned out to be two tables (opd_visits and surgeries) that had been accidentally set up as Unions instead of Relates against mismatched tables, creating silent schema conflicts.",
+        "Fixed it by rebuilding the entire data source from scratch in a fresh workbook, connecting tables in small batches of 2–3 — testing and saving after each batch — instead of adding all 11 at once.",
+        "Kept donations.csv out of the main data source entirely, since it shared no key with any other table, and connected it instead as its own independent Tableau data source rather than forcing it into the federated model."
+      ],
+      takeaways:
+        "This was my first project built for a real client rather than for myself — and the first time \"done\" meant a deadline, not just a personal sense of completeness. The Tableau crash forced a debugging discipline I hadn't needed before: isolate the smallest reproducible case (one table, then two) before assuming the model itself was wrong. It also taught me that a schema being logically correct in MySQL doesn't guarantee it'll behave the same way once flattened into CSVs for a BI tool — the Union/Relate mismatch was invisible until it broke at scale."
+    }
+  },
+
+  {
     id: 1,
     title: "Fraud Detection Analytics",
     category: "SQL",
@@ -333,9 +382,9 @@ export const projects = [
 {
   id: 9,
   title: "Landing Pages — Aether & Aura",
-  category: "Others",
+  category: "Web Development",
   year: "2025",
-  image: "/ammar-s_portfolio/Aether1.png",
+  image: "/ammar-s_portfolio/web-development/aether.png",
   tags: ["HTML", "CSS", "JavaScript"],
   desc: "Two HTML/CSS/JS landing pages built during Sem 1 ICT practice — Aether (dark-tech SaaS) and Aura (minimalist lifestyle). Practicing these made the actual final exam, which asked for something harder, feel familiar instead of intimidating.",
   github: "https://github.com/m2ammar/Web-Dev-Projects-",
@@ -346,10 +395,101 @@ export const projects = [
       "Aura — a minimalist lifestyle brand page with a centered hero, full-width image slider, feature cards section, and a clean split footer."
     ],
     technologies: ["HTML", "CSS", "JavaScript (no frameworks)"],
-    gallery: ["/ammar-s_portfolio/Aether1.png", "/ammar-s_portfolio/Aura1.png"],
+    gallery: ["/ammar-s_portfolio/web-development/Aether1.png", "/ammar-s_portfolio/web-development/Aura1.png"],
     takeaways: "Early on, CSS layouts felt overwhelming — the breakthrough came when I started thinking in boxes, every element as a container with its own space. Once that clicked, Flexbox became straightforward. These same concepts showed up in my actual ICT final exam, which made the paper feel familiar instead of intimidating."
   }
 },
+
+{
+  id: 12,
+  title: "Interactive CSS Styler",
+  category: "Web Development",
+  year: "2025",
+  image: "/ammar-s_portfolio/web-development/css-styler-1.png",
+  tags: ["HTML", "CSS", "JavaScript"],
+  desc: "A live styling playground — sliders and color pickers control a real element in real time, using direct DOM manipulation and event handling rather than static styling.",
+  github: "https://github.com/m2ammar/web-fundamentals-lab",
+  caseStudy: {
+    abstract: "An interactive CSS playground where sliders and color pickers control a live preview element in real time — built to move from writing static CSS to manipulating styles dynamically through JavaScript.",
+    howItWorks: [
+      "Range sliders and color inputs are wired to a live preview box via JavaScript event listeners.",
+      "Every input change updates the target element's inline styles immediately — border-radius, color, size, and spacing all respond in real time as the controls move."
+    ],
+    technologies: ["HTML", "CSS", "JavaScript (DOM Manipulation, Event Handling)"],
+    gallery: [
+      "/ammar-s_portfolio/web-development/Interactive_CSS_Styler.png",
+      "/ammar-s_portfolio/web-development/Interactive_CSS_Styler_2.png"
+    ],
+    takeaways: "This was the first exercise where JavaScript felt like it was actually controlling the page rather than just responding to a button click — connecting an input's live value straight to an element's style property made event-driven programming click in a way static exercises hadn't."
+  }
+},
+
+{
+  id: 13,
+  title: "Filterable Photo Gallery",
+  category: "Web Development",
+  year: "2025",
+  image: "/ammar-s_portfolio/web-development/photo-gallery.png",
+  tags: ["HTML", "CSS", "JavaScript"],
+  desc: "A 23-image gallery with a category sidebar and prev/next navigation — the most complete 'real product' feel of the Web Fundamentals Lab exercises.",
+  github: "https://github.com/m2ammar/web-fundamentals-lab",
+  caseStudy: {
+    abstract: "A filterable photo gallery built to practice DOM filtering and navigation logic — 23 images organized by category, with a sidebar filter and prev/next controls.",
+    howItWorks: [
+      "A category sidebar filters the visible image set on click, using JavaScript to show/hide DOM elements rather than reloading any content.",
+      "Prev/next navigation controls let a user step through the currently filtered set of images one at a time."
+    ],
+    technologies: ["HTML", "CSS", "JavaScript (DOM Filtering, Navigation Logic)"],
+    gallery: ["/ammar-s_portfolio/web-development/Filterable_Photo_Gallery.png"],
+    takeaways: "This was the exercise where a UI stopped feeling like a static layout and started feeling like a small product — filtering and navigation together meant thinking about state (which category is active, which image index is current) instead of just styling elements."
+  }
+},
+
+{
+  id: 14,
+  title: "Student Registration Form",
+  category: "Web Development",
+  year: "2025",
+  image: "/ammar-s_portfolio/web-development/registration-form.png",
+  tags: ["HTML", "CSS"],
+  desc: "A clean, structured registration form — fieldset/legend grouping, a full range of input types, and card styling with hover states. My cleanest structured-HTML piece.",
+  github: "https://github.com/m2ammar/HTML-CSS-Fundamentals",
+  caseStudy: {
+    abstract: "A student registration form built to practice proper HTML form structure and styling — fieldsets, a full range of input types, and a polished card layout.",
+    howItWorks: [
+      "Form fields are grouped using fieldset and legend elements for semantic structure rather than plain divs.",
+      "Covers the full range of common input types — text, email, number, radio, checkbox, select, and textarea — inside a styled card layout with hover states."
+    ],
+    technologies: ["HTML (Semantic Forms)", "CSS (Card Layout, Hover States)"],
+    gallery: ["/ammar-s_portfolio/web-development/registration-form.png"],
+    takeaways: "This was where form structure stopped being an afterthought — using fieldset and legend instead of generic divs made the form both more accessible and easier to style consistently, and it's the piece that best shows I understand form UX rather than just visual layout."
+  }
+},
+
+{
+  id: 15,
+  title: "Course Sidebar Hover Demo",
+  category: "Web Development",
+  year: "2025",
+  image: "/ammar-s_portfolio/web-development/course-sidebar-hover-1.png",
+  tags: ["HTML", "CSS"],
+  desc: "A course sidebar layout with hover-state polish — practicing layout structure and interactive detail together.",
+  github: "https://github.com/m2ammar/web-fundamentals-lab",
+  caseStudy: {
+    abstract: "A course sidebar layout exercise focused on combining solid layout structure with hover-state interactivity.",
+    howItWorks: [
+      "A fixed sidebar lists course sections, with hover states providing visual feedback as the user moves between items.",
+      "Layout built with a focus on spacing and alignment consistency across sidebar and content areas."
+    ],
+    technologies: ["HTML", "CSS (Hover States, Layout)"],
+    gallery: [
+      "/ammar-s_portfolio/web-development/Course_Sidebar_Hover_Demo.png",
+      "/ammar-s_portfolio/web-development/Course_Sidebar_Hover_Demo_2.png"
+    ],
+    takeaways: "A smaller exercise than the others, but useful for practicing the kind of layout + hover polish that shows up constantly in real navigation UI — the sidebar pattern here is one I'd reuse directly in a larger project."
+  }
+},
+
 {
   id: 10,
   title: "JavaFX Calculator",
