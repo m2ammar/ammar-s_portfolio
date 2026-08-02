@@ -65,6 +65,8 @@ Pushing to `main` automatically triggers a GitHub Actions workflow that builds t
 
 ## Featured Projects
 
+- **Indus Hospital Operations Intelligence Database** — 11-table hospital operations database built during a 40-hour internship, with a 4-page executive Tableau dashboard
+- **Fraud Detection Analytics** — 6.36M-row PaySim dataset normalized into 3 tables, with SQL-driven fraud pattern discovery visualized in Tableau
 - **PakMart Retail Analytics** — MySQL database with stored procedures and window functions, visualized in Tableau
 - **Global Healthcare System** — 19-table relational database covering 197 countries
 - **Pakistan Financial Services** — 9-table banking simulation with audit logging
