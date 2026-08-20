@@ -62,6 +62,7 @@ export const projects = [
     desc: "End-to-end fraud detection analysis on 6.36M PaySim mobile money transactions — raw data profiling, schema normalization into 3 tables, and fraud pattern discovery. Key finding: the dataset's built-in fraud flag catches only 0.2% of actual fraud.",
     github: "https://github.com/m2ammar/Fraud_Detection",
     tableau: "https://public.tableau.com/app/profile/muhammad.ammar.saleem/viz/FraudDetectionAnalytics/FraudDetectionAnalytics",
+    kaggle: "https://www.kaggle.com/code/muhammadammar11/fraud-detection-analytics-kaggle-notebook",
     caseStudy: {
       abstract:
         "A complete SQL + Tableau fraud detection project built from raw data to normalized database to interactive dashboard, using the PaySim synthetic mobile money dataset — 6,362,620 transactions. My biggest and most complete analysis project to date, built over three days.",

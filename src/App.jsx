@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Linkedin, Github, BarChart2, ExternalLink, X, ArrowLeft } from 'lucide-react';
+import { Linkedin, Github, BarChart2, Database, ExternalLink, X, ArrowLeft } from 'lucide-react';
 import { projects, TABLEAU } from './data/projects';
 import Home from './components/Home';
 
@@ -337,25 +337,31 @@ export default function App() {
                       </section>
                     )}
 
-                    {(caseStudyProject.github || caseStudyProject.tableau) && (
-                      <section className="pt-6 border-t border-zinc-900">
-                        <h2 className="text-white font-medium text-lg mb-4">Links</h2>
-                        <div className="flex flex-wrap gap-3">
-                          {caseStudyProject.github && (
-                            <a href={caseStudyProject.github} target="_blank" rel="noreferrer"
-                              className="flex items-center gap-2 bg-white text-black text-xs font-medium px-4 py-2 rounded-lg hover:bg-zinc-200 transition-colors">
-                              <Github size={13} /> View on GitHub
-                            </a>
-                          )}
-                          {caseStudyProject.tableau && (
-                            <a href={caseStudyProject.tableau} target="_blank" rel="noreferrer"
-                              className="flex items-center gap-2 border border-zinc-700 text-zinc-300 text-xs font-medium px-4 py-2 rounded-lg hover:border-zinc-500 hover:text-white transition-colors">
-                              <BarChart2 size={13} /> Tableau Dashboard
-                            </a>
-                          )}
-                        </div>
-                      </section>
-                    )}
+                    {(caseStudyProject.github || caseStudyProject.tableau || caseStudyProject.kaggle) && (
+  <section className="pt-6 border-t border-zinc-900">
+    <h2 className="text-white font-medium text-lg mb-4">Links</h2>
+    <div className="flex flex-wrap gap-3">
+      {caseStudyProject.github && (
+        <a href={caseStudyProject.github} target="_blank" rel="noreferrer"
+          className="flex items-center gap-2 bg-white text-black text-xs font-medium px-4 py-2 rounded-lg hover:bg-zinc-200 transition-colors">
+          <Github size={13} /> View on GitHub
+        </a>
+      )}
+      {caseStudyProject.tableau && (
+        <a href={caseStudyProject.tableau} target="_blank" rel="noreferrer"
+          className="flex items-center gap-2 border border-zinc-700 text-zinc-300 text-xs font-medium px-4 py-2 rounded-lg hover:border-zinc-500 hover:text-white transition-colors">
+          <BarChart2 size={13} /> Tableau Dashboard
+        </a>
+      )}
+      {caseStudyProject.kaggle && (
+        <a href={caseStudyProject.kaggle} target="_blank" rel="noreferrer"
+          className="flex items-center gap-2 border border-zinc-700 text-zinc-300 text-xs font-medium px-4 py-2 rounded-lg hover:border-zinc-500 hover:text-white transition-colors">
+          <Database size={13} /> Kaggle Notebook
+        </a>
+      )}
+    </div>
+  </section>
+)}
 
                   </div>
                 ) : (
@@ -438,6 +444,12 @@ export default function App() {
                       <BarChart2 size={13} /> Tableau Dashboard
                     </a>
                   )}
+                  {modal.kaggle && (
+  <a href={modal.kaggle} target="_blank" rel="noreferrer"
+    className="flex items-center gap-2 border border-zinc-700 text-zinc-300 text-xs font-medium px-4 py-2 rounded-lg hover:border-zinc-500 hover:text-white transition-colors">
+    <Database size={13} /> Kaggle Notebook
+  </a>
+)}
                 </div>
 
                 {modal.caseStudy && (
