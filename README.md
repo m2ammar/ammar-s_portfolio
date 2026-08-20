@@ -2,7 +2,11 @@
 
 A personal portfolio site showcasing SQL databases, BI dashboards, Java desktop applications, and digital logic design projects — built independently while learning full-stack development from scratch.
 
-**Live site:** [m2ammar.github.io/ammar-s_portfolio](https://m2ammar.github.io/ammar-s_portfolio/)
+<p align="left">
+  <a href="https://m2ammar.github.io/ammar-s_portfolio/">
+    <img src="https://img.shields.io/badge/Live%20Site-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Site" />
+  </a>
+</p>
 
 ![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)
 ![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite&logoColor=white)
@@ -61,6 +65,8 @@ Pushing to `main` automatically triggers a GitHub Actions workflow that builds t
 
 ## Featured Projects
 
+- **Indus Hospital Operations Intelligence Database** — 11-table hospital operations database built during a 40-hour internship, with a 4-page executive Tableau dashboard
+- **Fraud Detection Analytics** — 6.36M-row PaySim dataset normalized into 3 tables, with SQL-driven fraud pattern discovery visualized in Tableau
 - **PakMart Retail Analytics** — MySQL database with stored procedures and window functions, visualized in Tableau
 - **Global Healthcare System** — 19-table relational database covering 197 countries
 - **Pakistan Financial Services** — 9-table banking simulation with audit logging
@@ -70,6 +76,14 @@ Pushing to `main` automatically triggers a GitHub Actions workflow that builds t
 
 ## Contact
 
-- **Email:** ma9731501@gmail.com
-- **LinkedIn:** [muhammad-ammar-b533a0323](https://www.linkedin.com/in/muhammad-ammar-b533a0323/)
-- **GitHub:** [@m2ammar](https://github.com/m2ammar)
+<p align="left">
+  <a href="mailto:ma9731501@gmail.com">
+    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  </a>
+  <a href="https://www.linkedin.com/in/muhammad-ammar-b533a0323/">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  <a href="https://github.com/m2ammar">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+  </a>
+</p>
